@@ -1,0 +1,12 @@
+.app_form {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+label.app_label {
+	display: none;
+}
