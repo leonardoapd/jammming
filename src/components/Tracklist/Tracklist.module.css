@@ -1,0 +1,10 @@
+.app_tracklist {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 12px;
+
+    list-style-type: none;
+    padding: 16px;
+}

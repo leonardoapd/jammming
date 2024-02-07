@@ -1,12 +1,12 @@
 import styles from './Track.module.css';
 
-function Track({ track }) {
-	const { name, album, artist } = track;
+function Track({ track, onSelect }) {
+	const { id, name, album, artist } = track;
 
     const handleClick = () => {
-        console.log('Add track:', name);
+        onSelect(track);
     };
-    
+
 	return (
 		<div className={styles.app_track__container + ' nes-container is-rounded'}>
 			<div className={styles.app_track__info}>
