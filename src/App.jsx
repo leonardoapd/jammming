@@ -1,13 +1,14 @@
 import { useState } from 'react';
-import { Navbar, SearchBar, SearchResults, Playlist } from './components';
+import { Navbar, SearchBar, SearchResults, Playlist, Dialog } from './components';
 // import songsData from './assets/data/songs.json';
-import Spotify from './components/util/Spotify';
+import Spotify from './util/Spotify';
 import './App.css';
 
 function App() {
 	const [searchResults, setSearchResults] = useState([]);
 	const [playlist, setPlaylist] = useState([]);
 	const [playlistName, setPlaylistName] = useState('New Playlist');
+	const [dialog, setDialog] = useState({ title: '', message: '', open: false });
 
 	/* 
 	const filterSongs = (term) => {
@@ -47,7 +48,24 @@ function App() {
 	};
 
 	const handlePlaylistSubmit = (name, tracks) => {
-		if (!name || !tracks.length) {
+		const dialog = document.getElementById('dialog-default');
+		
+		if (name === '') {
+			setDialog({
+				title: 'Error',
+				message: 'Please enter a name.',
+				open: true,
+			});
+			dialog.showModal();
+			return;
+		}
+		if (!tracks.length) {
+			setDialog({
+				title: 'Error',
+				message: 'Please add tracks to the playlist.',
+				open: true,
+			});
+			dialog.showModal();
 			return;
 		}
 		const trackUris = tracks.map((track) => track.uri);
@@ -64,6 +82,9 @@ function App() {
 	return (
 		<>
 			<Navbar />
+			<h3 style={{ textAlign: 'center' }}>
+				With Jammming you can add songs to your playlist and save it to Spotify
+			</h3>
 			<SearchBar onSearch={handleSearch} />
 			<main className='main-container'>
 				<SearchResults results={searchResults} onAdd={handleAdding} />
@@ -75,6 +96,7 @@ function App() {
 					onNameChange={handlePlaylistNameChange}
 				/>
 			</main>
+			<Dialog {...dialog} />
 		</>
 	);
 }

@@ -9,7 +9,6 @@ function Playlist({ playlist, playlistName, onRemove, onSubmit, onNameChange }) 
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		if (!playlistName) return;
 		onSubmit(playlistName, playlist);
 	};
 

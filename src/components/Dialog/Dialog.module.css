@@ -1,0 +1,6 @@
+.dialog_menu {
+    padding: 0;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}

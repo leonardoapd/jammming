@@ -4,5 +4,6 @@ import Tracklist from "./Tracklist/Tracklist";
 import SearchResults from "./SearchResults/SearchResults";
 import Playlist from "./Playlist/Playlist";
 import Navbar from "./Navbar/Navbar";
+import Dialog from "./Dialog/Dialog";
 
-export { SearchBar, Track, Tracklist, SearchResults, Playlist, Navbar };
+export { SearchBar, Track, Tracklist, SearchResults, Playlist, Navbar, Dialog};

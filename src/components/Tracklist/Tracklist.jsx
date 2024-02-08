@@ -2,7 +2,7 @@ import { Track } from '../';
 import styles from './Tracklist.module.css';
 
 function Tracklist({ tracks, onAdd, onRemove, isRemoval = false, isPlaylist = false }) {
-	if (!isPlaylist && !tracks.length) return <p>No tracks found</p>;
+	if (!isPlaylist && !tracks.length) return <p style={{ color: 'red' }}>No tracks found</p>;
 
 	const handleSelect = (track) => {
 		!isRemoval ? onAdd(track) : onRemove(track);
