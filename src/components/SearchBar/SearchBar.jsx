@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './SearchBar.module.css';
 
-function SearchBar() {
+function SearchBar({ onSearch }) {
 	const [userInput, setUserInput] = useState('');
 
 	const handleChange = (e) => {
@@ -11,7 +11,8 @@ function SearchBar() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(userInput);
+		if (!userInput) return;
+        onSearch(userInput);
 	};
 
 	return (
