@@ -1,13 +1,10 @@
-import { useState, useEffect } from 'react';
 import { Tracklist } from '../';
 import styles from './Playlist.module.css';
 
-function Playlist({ playlist, onRemove, onSubmit }) {
-	const [playlistName, setPlaylistName] = useState('');
-
+function Playlist({ playlist, playlistName, onRemove, onSubmit, onNameChange }) {
 	const handleChange = (e) => {
 		const { value } = e.target;
-		setPlaylistName(value);
+		onNameChange(value);
 	};
 
 	const handleSubmit = (e) => {
