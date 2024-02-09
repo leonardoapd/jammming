@@ -12,17 +12,19 @@ function SearchBar({ onSearch }) {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (!userInput) return;
-        onSearch(userInput);
+		onSearch(userInput);
 	};
 
 	return (
 		<>
 			<form onSubmit={handleSubmit} className={styles.app_form}>
 				<div className='nes-field'>
-					<label htmlFor='search' className={styles.app_label}>Search</label>
+					<label htmlFor='search' className={styles.app_label}>
+						Search
+					</label>
 					<input
 						type='text'
-						placeholder='Search...'
+						placeholder='Enter a song title...'
 						value={userInput}
 						onChange={handleChange}
 						className='nes-input'
