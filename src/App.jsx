@@ -73,6 +73,11 @@ function App() {
 			.then(() => {
 				setPlaylistName('New Playlist');
 				setPlaylist([]);
+				setDialog({
+					title: 'Success',
+					message: 'Playlist saved successfully.',
+					open: true,
+				});
 			})
 			.catch((error) => {
 				console.error(error);
