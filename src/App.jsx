@@ -78,6 +78,7 @@ function App() {
 					message: 'Playlist saved successfully.',
 					open: true,
 				});
+				dialog.showModal();
 			})
 			.catch((error) => {
 				console.error(error);
